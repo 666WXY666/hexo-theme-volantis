@@ -79,13 +79,23 @@
         <% if (theme.plugins.backstretch && theme.plugins.backstretch.enable && theme.plugins.backstretch.images) { %>
           <% var posi = null;
             if (theme.plugins.backstretch.position == 'cover') {
-              posi = '.cover';
+              posi = '.cover-backstretch';
             }
           %>
           if ('<%- posi %>') {
             $('<%- posi %>').backstretch("resize");
+            if($('.cover-wrapper').is(':hidden')){
+              $('.cover-backstretch').backstretch("pause");
+            }else{
+              $('.cover-backstretch').backstretch("next");
+            }
           } else {
             $.backstretch("resize");
+            if($('.cover-wrapper').is(':hidden')){
+              $.backstretch("pause");
+            }else{
+              $.backstretch("next");
+            }
           }
         <% } %>
         <% if (config.highlight.enable != true && theme.plugins.highlightjs && theme.plugins.highlightjs.js) { %>

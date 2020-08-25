@@ -42,8 +42,8 @@ style:
     h2: 48px # Spacing above H2 (only px unit)
     h3: 24px # Spacing above H3 (only px unit)
     h4: 16px # Spacing above H4 (only px unit)
-    paragraph: .6rem # Paragraph spacing between paragraphs
-    row: .4rem # Paragraph spacing between other elements
+    paragraph: 1rem # Paragraph spacing between paragraphs
+    row: .5rem # Paragraph spacing between other elements
     line_height: 1.65 # normal, 1.5, 1.75, 2 ...
   border_radius:
     card: 8px
@@ -84,28 +84,100 @@ style:
       # style: normal
     iconfont:
       fontfamily: 'Font Awesome 5 Free'
-  color:
-  #   site: '#21232F' # Website background color
-    site_inner: '#fff' # Text color inside the website background
-  #   site_footer: '#666' # Footer text color inside the website background
-  #   card: '#444' # Card background color
-  #   text: '#fff' # The color of the text on the card.
-  #   # theme: '#ff9800' # Main color
-  #   link: '#1BCDFC' # Link color
-  #   hover: '#ff5722' # Link highlight color
-  #   inner: '#333' # Text color inside the button
-  #   block: '#555' # Block color
-  #   codeblock: '#48371A' # Codeblock color
-  #   p: '#ccc' # Paragraph color
 
 
-# 图片懒加载，请复制到站点配置文件中使用。
-lazyload:
-  enable: true
-  onlypost: false
-  loadingImg: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg
-  blurIn: true # 模糊加载效果 （loadingImg为空时有效）
+# 配色方案
+color:
+  # ----
+  # 通用颜色
+  common:
+    # 主题色
+    theme: '#44D7B6'
+    # 链接色
+    link: '#2196f3'
+    # 按钮色
+    button: '#44D7B6'
+    # 鼠标放到交互元素上时的色
+    hover: '#ff5722'
+    # 主题色块内部的文字颜色
+    inner: '#fff'
+    # 选中区域文字的背景颜色
+    selection: 'alpha(#2196f3, 0.2)'
+  # ----
+  # 亮色主题（默认）
+  light:
+    # 网站背景色
+    site_bg: '#f4f4f4'
+    # 网站背景上的文字
+    site_inner: '#fff'
+    # 网站页脚文字
+    site_footer: '#666'
 
+    # 卡片背景色
+    card: '#fff'
+    # 卡片上的普通文字
+    text: '#444'
+
+    # 区块和代码块背景色
+    block: '#f6f6f6'
+    # 代码块高亮时的背景色
+    codeblock: '#FFF7EA'
+    # 行内代码颜色
+    inlinecode: '#D56D28'
+
+    # 文章部分
+    h1: '#444'
+    h2: '#444'
+    h3: '#444'
+    h4: '#444'
+    h5: '#444'
+    h6: '#444'
+    p: '#444'
+
+    # 列表文字
+    list: '#666'
+    # 列表 hover 时的文字
+    list_hl: 'mix($color-theme, #000, 80)'
+    # 辅助性文字
+    meta: '#888'
+  # ----
+  # 暗色主题
+  dark:
+    # 网站背景色
+    site_bg: '#222'
+    # 网站背景上的文字
+    site_inner: '#eee'
+    # 网站页脚文字
+    site_footer: '#eee'
+    # 卡片背景色
+    card: '#444'
+    # 卡片上的普通文字
+    text: '#eee'
+
+    # 区块和代码块背景色
+    block: '#3a3a3a'
+    # 代码块高亮时的背景色
+    codeblock: '#343a3c'
+    # 行内代码颜色
+    inlinecode: '#D56D28'
+
+    # 文章部分
+    h1: '#eee'
+    h2: '#eee'
+    h3: '#ddd'
+    h4: '#ddd'
+    h5: '#ddd'
+    h6: '#ddd'
+    p: '#bbb'
+
+    # 列表文字
+    list: '#aaa'
+    # 列表 hover 时的文字
+    list_hl: 'mix($color-theme, #fff, 80)'
+    # 辅助性文字
+    meta: '#888'
+    # 夜间图片亮度
+    brightness: 70%
 
 # Navigation Bar
 navbar:
@@ -148,29 +220,37 @@ cover:
     archive: true
     others: false # can be written in front-matter 'cover: true'
   background: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
-  logo: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
+  logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 'Volantis'
   subtitle: ''
   search: A Wonderful Theme for Hexo # search bar placeholder
   features:
     - name: 文档
+      icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
-      url: /v3/getting-started/
+      url: /v4/getting-started/
     - name: 帮助
+      icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
       url: faqs/
     - name: 示例
+      icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
       url: /examples/
     - name: 社区
+      icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
       url: /contributors/
     - name: 博客
+      icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
       url: /archives/
     - name: 源码
+      icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
       url: https://github.com/volantis-x/hexo-theme-volantis/
+
+
 
 # 文章布局
 article:
@@ -190,11 +270,47 @@ article:
   # 文章详情页面的文章卡片本体布局方案
   body:
     # 文章顶部信息
-    top_meta:
-    # 页脚组件
+    top_meta: [title, author, category, date, counter]
+    # ----------------
+    # 文章页脚组件
     footer_widget:
+      # ----------------
+      # 参考资料、相关资料等 (for layout: post/docs)
+      references:
+        title: 参考资料
+        icon: fas fa-quote-left
+        # 在 front-matter 中:
+        #   references:
+        #     - title: 某篇文章
+        #       url: https://
+        # 即可显示此组件。
+      # ----------------
+      # 相关文章，需要安装插件 (for layout: post)
+      # npm i hexo-related-popular-posts
+      related_posts:
+        enable: false
+        title: 相关文章
+        icon: fas fa-bookmark
+        max_count: 5
+        # 设为空则不使用文章头图
+        placeholder_img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg
+      # ----------------
+      # 版权声明组件 (for layout: post/docs)
+      copyright:
+        enable: true
+        permalink: '本文永久链接是：'
+        content:
+          - '博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议'
+          - permalink
+      # ----------------
+      # 打赏组件 (for layout: post/docs)
+      donate:
+        enable: false
+        images:
+          - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+          - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
     # 文章底部信息
-    bottom_meta:
+    bottom_meta: [updated, tags, btns, share]
 
 
 
@@ -203,36 +319,28 @@ layout:
   # The following can be written in `blog/source/_data/layout.yml`
   # 文章列表（主页、自定义的列表）布局
   on_list:
-    # 列表中每一篇文章的meta信息
-    meta: [title, author, category, date, wordcount, counter, valinecount, pin]
     # 列表类页面的侧边栏
     sidebar: [blogger, category, tagcloud, qrcode]
-    # read more button
-    readmore: 阅读全文 <i class="fas fa-chevron-right"></i>
   # 页面布局
   on_page:
     # 文章页面主体元素，你也可以在页面的Front-matter中设置
     body: [article, comments]
-    # 默认的meta信息，文章中没有配置则按照这里的配置来显示，设置为false则不显示
-    # 其中，title只在header中有效，music和thumbnail无需在这里设置，文章中有则显示
-    # 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
-    meta:
-      header: [title, author, category, date, pin]
-      footer: [updated, tags, btns, share]
     # 文章页面的侧边栏
     sidebar: [qrcode, toc]
-  # 文章布局，参数继承自 on_page
-  on_post:
-    # 文章页脚，自动在每一篇文章末尾添加
-    article_footer: [references, related_repos, copyright, donate]
-  # 其他的页面布局暂时等于 on_list
+
+
+# 内置标签插件的配置
+tag_plugins:
+  # 外链卡片
+  link:
+    placeholder: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/256/safari.png
 
 
 # meta library
 meta:
   # 文章标题
   title: # 暂无配置
-  # 默认文章作者（可在front-matter中覆盖）
+  # 默认文章作者（可在 front-matter 中覆盖）
   author:
     avatar:
     name: 请设置文章作者
@@ -273,7 +381,7 @@ meta:
       img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png
     - id: weibo
       img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png
-    # - id: qrcode # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
+    # - id: qrcode # 当id为qrcode时需要安装插件  npm i hexo-helper-qrcode
     #   img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png
     # - id: telegram
     #   img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png
@@ -357,25 +465,7 @@ widget:
     color: true
     start_color: '#999'
     end_color: '#555'
-  # ---------------------------------------
-  # related posts widget
-  related_posts:
-    class: related_posts # npm i -S hexo-related-popular-posts
-    display: [desktop, mobile] # [desktop, mobile]
-    header:
-      icon: fas fa-bookmark
-      title: 相关文章
-    max_count: 5
-  # ---------------------------------------
-  # copyright widget (valid only in articles)
-  copyright:
-    class: copyright
-    display: [desktop, mobile] # [desktop, mobile]
-    blockquote: true
-    permalink: '本文永久链接是：'
-    content:
-      - '博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议'
-      - permalink
+
   # ---------------------------------------
   # qrcode widget
   donate:
@@ -386,20 +476,6 @@ widget:
     images:
       - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
       - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
-  # ---------------------------------------
-  # references widget
-  references:
-    class: references # is subclass of list
-    display: [desktop, mobile] # [desktop, mobile]
-    header:
-      icon: fas fa-quote-left
-      title: 参考资料
-  related_repos:
-    class: references # is subclass of list
-    display: [desktop, mobile] # [desktop, mobile]
-    header:
-      icon: fab fa-github
-      title: 源码链接
   # ---------------------------------------
   # webinfo widget
   webinfo:
@@ -453,6 +529,14 @@ footer:
       url: https://github.com/volantis-x/
     - icon: fas fa-headphones-alt
       url: https://music.163.com/#/user/home?id=63035382
+    # - img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/64/qq.png
+    #   url: /
+    # - img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/64/qzone.png
+    #   url: /
+    # - img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/64/weibo.png
+    #   url: /
+    # - avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/64/wechat.png
+    #   url: /
   # site source
   source: https://github.com/volantis-x/volantis-docs/
   # analytics using leancloud
@@ -498,8 +582,18 @@ plugins:
 
 
   ######## Plugins to improve loading speed:
-  # Preload (The menu's url must end with ‘/’)
-  instant_page: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js
+  # Preload (The menu's url must end with ‘/’) 选择一个即可
+  instant_page: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js
+  flying_pages: https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js
+
+  # 图片懒加载
+  # https://www.npmjs.com/package/vanilla-lazyload
+  lazyload:
+    enable: true
+    js: https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js
+    onlypost: false
+    loadingImg: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg
+    blurIn: true # 模糊加载效果 （loadingImg为空时有效）
 
   ######## Plugins to optimize the experience:
   # highlight.js
@@ -521,7 +615,7 @@ plugins:
 
   ######## Plugins for SEO:
 
-  # npm i --save hexo-wordcount
+  # npm i hexo-wordcount
   wordcount: #true
 
   ######## Plugins for ...
@@ -614,19 +708,14 @@ plugins:
   # https://darkmodejs.learn.uno
   # 暗黑模式样式：https://github.com/volantis-x/hexo-theme-volantis/blob/master/source/css/_third-party/darkmode.styl
   darkmodejs:
-    enable: false
+    enable: true
     js: https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js
-    bottom: 32px
-    right: unset
-    left: 16px
-    time: 0s
-    mixColor: '#f4f4f4'
-    backgroundColor: '#f4f4f4'
-    buttonColorDark: '#100f2c'
-    buttonColorLight: '#f4f4f4'
-    saveInCookies: true
-    label: 🌓
-    autoMatchOsTheme: true
+    button: # button 使用默认或自行开发
+      enable: true
+      label: 🌓
+      buttonDark: '#bbb'
+      buttonLight: '#444'
+    compatible: true # 卡片兼容性处理，如果未发现卡片出现兼容问题设置为false
 
 
 
@@ -768,7 +857,7 @@ rightmenu:
 
 ############################### Search ###############################
 # To use hexo search, you need to install the following plugins:
-# npm i -S hexo-generator-search hexo-generator-json-content
+# npm i hexo-generator-search hexo-generator-json-content
 search:
   enable: true
   service: hexo  # hexo, google, algolia, azure, baidu
@@ -790,15 +879,15 @@ search:
 
 analytics:
   busuanzi: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
-  leancloud:
-    app_id: # u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
-    app_key: # jfHtEKVE24j0IVCGHbvuFClp
+  leancloud: # 请使用自己的 id & key 以防止数据丢失
+    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
+    app_key: jfHtEKVE24j0IVCGHbvuFClp
     custom_api_server: # 一般不需要写，除非自定义了 API Server
 
 ############################### Theme Information ###############################
 info:
   name: Volantis # This is theme's name.
-  version: '3.0.0' # This is theme's version.
+  version: '4.0.0-beta.2' # This is theme's version.
   docs: https://volantis.js.org/ # This is theme's URL.
   repo: https://github.com/volantis-x/hexo-theme-volantis
   cdn:

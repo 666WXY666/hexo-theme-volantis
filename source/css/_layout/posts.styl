@@ -3,7 +3,7 @@
   margin-bottom: $gap * 0.75
   line-height: 1.4
   a
-    color: inherit
+    color: var(--color-h1)
     &:hover
       color: $color-hover
   &[pin]
@@ -12,7 +12,7 @@
   overflow: hidden
   text-align: justify
   .md
-    color: mix($color-p, $color-card, 85)
+    color: var(--color-list)
   .headimg-div
     overflow: hidden
     margin-left: 0 - 1.5 * $gap
@@ -55,12 +55,12 @@
   display: flex
   flex-wrap: wrap
   justify-content: space-between
-  color: $color-meta
+  color: var(--color-meta)
   time
     font-size: $fontsize-meta
   .category-link
     font-size: $fontsize-meta
-    color: $color-meta
+    color: var(--color-meta)
     -webkit-font-smoothing: auto
     -moz-osx-font-smoothing: auto
     &:hover
