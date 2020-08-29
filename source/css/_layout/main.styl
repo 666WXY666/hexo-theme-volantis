@@ -1,8 +1,8 @@
 .safearea
-  margin: $gap
+  margin: $gap $gap 0
 .l_body
   position: relative
-  if hexo-config('style.font_smoothing') == true
+  if hexo-config('custom_css.font_smoothing') == true
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
   div.loading
@@ -11,8 +11,6 @@
     display: block
     &,p
       text-align: center
-    i
-      line-height: $fontsize-body * 3
   .s-top
     trans(0.6s)
     z-index: 9
@@ -197,28 +195,6 @@
           font-size: $fontsize-code
         .new-meta-item
           color: var(--color-meta)
-          &.link-btns
-            display: flex
-            flex-wrap: wrap
-            justify-content: flex-start
-            .btn
-              color: white
-              padding: 1px 4px
-              border-radius: 2px
-              margin: 2px
-              line-height: 1.5
-              &:hover
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 8px 16px 0 rgba(0, 0, 0, 0.1)
-              i
-                padding-left: 3px
-              p
-                color: white
-                padding-top: 3px
-                padding-right: 2px
-              &:hover
-                color: white
-                p
-                  color: white
           .notlink
             cursor: default
             &:hover
@@ -345,7 +321,7 @@
 
 
 
-.comments
+article#comments
   .article
     p[ct]
       margin-top: 0
@@ -360,7 +336,7 @@
     text-align: center
     margin: $gap 0
     &,a,i
-      line-height: $fontsize-body * 3
+      line-height: 3em
     a.load-comments
       display: inline-block
       border-radius: 2px
@@ -375,7 +351,7 @@
 .white-box
   background: var(--color-card)
 
-if hexo-config('plugins.scrollreveal.js')
+if hexo-config('plugins.scrollreveal.enable')
   .reveal
     visibility: hidden
 

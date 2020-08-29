@@ -34,6 +34,7 @@
     .nav-sub
       trans()
       opacity: 0
+      height: $navbar-height
       width: "calc(100% - 2 * %s)" % $gap
       position: absolute
       @media screen and (min-width: $device-2k)
@@ -61,7 +62,6 @@
     max-width: $layout-width
     margin: auto
     .title
-      font-size: $fontsize-body
       font-weight: bold
       font-family: $fontfamily
       line-height: 1.2
@@ -148,7 +148,7 @@
       position: absolute
       width: $iconW
       left: $iconMargin + 1px
-      color: alpha($color-text, 70%)
+      color: var(--color-meta)
       @media screen and (max-width: $device-mobile)
         display: none
     .input
@@ -195,10 +195,17 @@
         .input
           width: "calc(100% - %s)" % (3 * $gap + 2 * $iconW)
 
+ul.m-pc
+  >li>a
+    color: inherit
+    border-bottom: 2px solid transparent
+    &:active,&.active
+      border-bottom: 2px solid $color-theme
 ul.m-pc,ul.list-v
   li:hover
     >ul.list-v
       display: block
+
 
 ul.nav-list-h
   display: flex
@@ -249,7 +256,7 @@ ul.list-v
   >li>a
     trans()
     display: block
-    color: mix($color-text, $color-card, 80)
+    color: var(--color-list)
     font-size: $fontsize-meta
     font-weight: bold
     line-height: 36px
@@ -281,7 +288,6 @@ ul.list-v
     color: inherit
     &:active,&.active
       color: $color-theme
-      border-bottom: 2px solid $color-theme
   &:hover>a
     color: var(--color-list-hl)
   i.music
@@ -305,7 +311,7 @@ ul.list-v
     right: "calc(100% - 0.5 * %s)" % $gap
 
 .l_header .wrapper
-  if hexo-config('style.navbar.width') == 'auto'
+  if hexo-config('custom_css.navbar.width') == 'auto'
     max-width: $layout-width
     margin: auto
     @media screen and (min-width: $device-2k)
@@ -347,7 +353,7 @@ ul.list-v
 
 
 .l_header
-  if hexo-config('style.navbar.width') == 'auto'
+  if hexo-config('custom_css.navbar.width') == 'auto'
     max-width: 65vw
     left: "calc((100% - %s) * 0.5)" % @max-width
     border-bottom-left-radius: $border-card
