@@ -54,7 +54,8 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
+  background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
+  # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 'Volantis'
   subtitle: ''
@@ -136,7 +137,7 @@ article:
         icon: fas fa-bookmark
         max_count: 5
         # 设为空则不使用文章头图
-        placeholder_img: data:image/png;base64,666
+        placeholder_img: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
       # ----------------
       # 版权声明组件 (for layout: post)
       copyright:
@@ -186,7 +187,7 @@ article:
         desc: '' # 条评论
       walinecount:
         icon: fas fa-comment-dots
-        desc: '' # 条评论        
+        desc: '' # 条评论
       # 文章字数和阅读时长
       wordcount:
         icon_wordcount: fas fa-keyboard
@@ -218,7 +219,7 @@ comments:
   # https://valine.js.org/
   valine:
     # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
-    path: # 全局评论地址
+    path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是valine的问题
     placeholder: 快来评论吧~  # 评论占位提示
     # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder emojiCDN emojiMaps] 选项
     appId: # your appId
@@ -231,7 +232,6 @@ comments:
     pageSize: 10 # comment list page size
     lang: zh-cn
     highlight: true
-    visitor: true
     mathJax: false
   # MiniValine
   # https://github.com/MiniValine/MiniValine
@@ -239,7 +239,7 @@ comments:
     js: https://cdn.jsdelivr.net/npm/minivaline@latest
     path: # 全局评论地址
     placeholder: 快来评论吧~  # 全局评论占位提示
-    # 更多选项 https://minivaline.js.org/docs/cn/#/Options 按照yml格式继续填写即可 （除了 [el path placeholder] 选项）  
+    # 更多选项 https://minivaline.js.org/docs/cn/#/Options 按照yml格式继续填写即可 （除了 [el path placeholder] 选项）
     # emoticonUrl 等列表选项 可参考 https://github.com/MiniValine/hexo-next-minivaline
     # 下面是一个例子：
     backend: waline
@@ -251,6 +251,17 @@ comments:
     # optional
     autoload: false
     path: # 全局评论地址
+  # DisqusJS
+  # https://github.com/SukkaW/DisqusJS
+  disqusjs:
+    path: # 全局评论地址
+    # 配置项按照yml格式继续填写即可
+    #shortname:
+    #api:
+    #apikey:
+    #admin:
+    #nesting:
+
   # Gitalk
   # https://gitalk.github.io/
   gitalk:
@@ -292,7 +303,7 @@ comments:
   # https://waline.js.org/
   waline:
     js: https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js
-    path: # 全局评论地址
+    path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是waline的问题
     placeholder: 快来评论吧~  # 评论占位提示
     imageHosting: https://7bu.top/api/upload # 图床api（默认使用去不图床）
     # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder uploadImage] 选项
@@ -590,29 +601,8 @@ plugins:
     cacheBust: false     # When set to true, Pjax appends a timestamp  to skip the browser cache.
     animation: false # false, nprogress, circle
     banUrl:              # 被屏蔽的 url 地址将不启用 pjax 跳转，可以在控制台下使用 window.location.pathname 获取
-      # - /artitalk/     # artitalk 不支持 pjax
-
-
-  # Artitalk https://artitalk.js.org
-  # 配置过程请参考：https://artitalk.js.org/doc.html
-  # 使用过旧版本的请修改Leancloud shuoshuo class部分列名：https://artitalk.js.org/release.html
-  # 除appID和appKEY外均为选填项
-  artitalk:
-    # Set `layout: artitalk` to enable in page
-    # 配置项按照yml格式继续填写即可
-    appId: ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI # your appID
-    appKey: nHXLd3N3Jgh460t2iRQKWAtr # your appKEY
-    # serverURL:  #leancloud绑定的安全域名，使用国际版的话不需要填写
-    # lang: # 语言设置，zh为汉语，en为英语，es为西班牙语。默认为汉语
-    # pageSize: #每页说说的显示数量
-    # shuoPla: #在编辑说说的输入框中的占位符
-    # avatarPla: #自定义头像url的输入框的占位符
-    # motion: #加载动画的开关，1为开，0为关，默认为开
-    # bgImg: #说说输入框背景图片url
-    # color1: #说说背景颜色1&按钮颜色1
-    # color2: #说说背景颜色2&按钮颜色2
-    # color3: #说说字体颜色
-    # cssUrl: #自定义css接口
+      # - '/artitalk/'     # artitalk 不支持 pjax
+      # - '/bb/'           # bbtalk 不支持 pjax
 
   # 从 issues 加载动态数据
   # {% issues sites/timeline/friends | api=xxx | group=key:a,b,c %}
@@ -635,6 +625,41 @@ plugins:
   killOldVersionsOfIE:
     enable: true
     action: alert # jump: 升级提示跳转 alert: 升级提示弹窗
+
+  # Artitalk https://artitalk.js.org
+  # 配置过程请参考：https://artitalk.js.org/doc.html
+  # 使用过旧版本的请修改Leancloud shuoshuo class部分列名：https://artitalk.js.org/release.html
+  # 除appID和appKEY外均为选填项
+  artitalk:
+    # Set `layout: artitalk` to enable in page
+    # 配置项按照yml格式继续填写即可
+    appId: ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI # your appID
+    appKey: nHXLd3N3Jgh460t2iRQKWAtr # your appKEY
+    # serverURL:  #leancloud绑定的安全域名，使用国际版的话不需要填写
+    # lang: # 语言设置，zh为汉语，en为英语，es为西班牙语。默认为汉语
+    # pageSize: #每页说说的显示数量
+    # shuoPla: #在编辑说说的输入框中的占位符
+    # avatarPla: #自定义头像url的输入框的占位符
+    # motion: #加载动画的开关，1为开，0为关，默认为开
+    # bgImg: #说说输入框背景图片url
+    # color1: #说说背景颜色1&按钮颜色1
+    # color2: #说说背景颜色2&按钮颜色2
+    # color3: #说说字体颜色
+    # cssUrl: #自定义css接口
+
+  # BBtalk https://bb.js.org
+  bbtalk:
+    js: https://cdn.jsdelivr.net/npm/bbtalk@0.1.5/dist/bbtalk.min.js # BBtalk.js
+    appId: 0KzOX4vC7Jsk6vzUGNeEiUaI-gzGzoHsz # your appID
+    appKey: HwCiWuxfpvKiLm4teCUgTIba # your appKEY
+    serverURLs: https://bbapi.heson10.com # Request Api 域名
+
+  # Tidio聊天功能
+  # https://www.tidio.com/
+  tidio:
+    enable: #true
+    id: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 ############################### Plugins ############################### > end
 
 ############################### Rightmenu ############################### > start
