@@ -2,11 +2,11 @@
 # 仅限/source/js/中的JS文件
 # 默认使用 https://cdn.jsdelivr.net/npm/hexo-theme-volantis/source/js/ 的CDN压缩版本，注意版本号对应关系！！可以通过修改以下配置项覆盖
 # 开发者注意 use_cdn 设置为 false
-use_cdn: false
+use_cdn: true
 info:
   theme_name: Volantis # This is theme's name.
-  theme_version: '4.2.0' # This is theme's version.
-  theme_docs: https://volantis-x.github.io/ # This is theme's URL.
+  theme_version: '4.3.0' # This is theme's version.
+  theme_docs: https://volantis.js.org/ # This is theme's URL.
   theme_repo: https://github.com/volantis-x/hexo-theme-volantis
   cdn:
     js:
@@ -214,7 +214,7 @@ article:
 comments:
   title: <i class='fas fa-comments'></i> 评论
   subtitle:
-  service: valine # valine, minivaline, disqus, gitalk, vssue, livere, isso, hashover, twikoo, waline
+  service: valine # valine, twikoo, waline, minivaline, disqus, disqusjs, gitalk, vssue, livere, isso, hashover
   # Valine
   # https://valine.js.org/
   valine:
@@ -255,13 +255,12 @@ comments:
   # https://github.com/SukkaW/DisqusJS
   disqusjs:
     path: # 全局评论地址
-    # 配置项按照yml格式继续填写即可
+    # 配置项按照yml格式继续填写即可 除了 [siteName url identifier] 选项
     #shortname:
     #api:
     #apikey:
     #admin:
     #nesting:
-
   # Gitalk
   # https://gitalk.github.io/
   gitalk:
@@ -272,23 +271,23 @@ comments:
     owner:
     admin: # []
     path: # 全局评论地址
-  # Vssue
+  # Vssue 暂不支持Pjax
   # https://vssue.js.org/zh/
   vssue:
     owner:
     repo:
     clientId:
     clientSecret:
-  # LiveRe
+  # LiveRe 暂不支持Pjax
   # https://www.livere.com
   livere:
     uid:
-  # Isso
+  # Isso 暂不支持Pjax
   # https://posativ.org/isso/
   isso:
     url: https://example.com/(path/)
     src: https://example.com/(path/)js/embed.min.js
-  # HashOver
+  # HashOver 暂不支持Pjax
   # https://www.barkdull.org/software/hashover
   hashover:
     src: https://example.com/(path/)comments.php
@@ -620,11 +619,16 @@ plugins:
     enable: #true
 
   # 旧版 Internet Explorer 淘汰行动
-  # https://support.dmeng.net/kill-old-versions-of-ie.html
+  # https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support
   # 本主题不支持Internet Explorer的任何版本!!!
   killOldVersionsOfIE:
     enable: true
-    action: alert # jump: 升级提示跳转 alert: 升级提示弹窗
+
+  # 禁用JavaScript提示
+  # 本页面需要浏览器支持（启用）JavaScript
+  # 主题中的某些插件必须启用JavaScript才能正常工作，例如开启scrollreveal如果禁用JavaScript会导致卡片消失
+  killNoScript:
+    enable: true
 
   # Artitalk https://artitalk.js.org
   # 配置过程请参考：https://artitalk.js.org/doc.html
